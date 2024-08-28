@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
-import { SimplePokemon } from '@/app/pokemons';
 import { IoHeartOutline } from 'react-icons/io5';
+
+import { SimplePokemon } from '@/pokemons';
 
 interface Props {
   pokemon: SimplePokemon;
 }
+
 export const PokemonCard = ({ pokemon }: Props) => {
   const { id, name } = pokemon;
 
