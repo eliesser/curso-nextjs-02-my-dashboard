@@ -8,10 +8,6 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'pokeapi.co',
-      },
-      {
-        protocol: 'https',
         hostname: 'raw.githubusercontent.com',
       },
     ],
