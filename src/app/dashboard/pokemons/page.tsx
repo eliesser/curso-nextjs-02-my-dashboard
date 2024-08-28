@@ -1,4 +1,11 @@
+import { Metadata } from 'next';
+
 import { SimplePokemon, PokemonsResponse, PokemonGrid } from '@/pokemons';
+
+export const metadata: Metadata = {
+  title: '151 Pokemons',
+  description: 'Generated 151 Pokemons',
+};
 
 const getPokemons = async (limit = 20, offset = 0): Promise<SimplePokemon[]> => {
   const pokemonsResponse: PokemonsResponse = await fetch(
