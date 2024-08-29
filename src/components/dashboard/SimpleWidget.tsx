@@ -17,7 +17,7 @@ export const SimpleWidget = ({ title, subtitle, label, icon, href }: Props) => {
         <div>{label && <h2 className='font-bold text-gray-600 text-center'>{label}</h2>}</div>
         <div className='my-3'>
           <div className='flex flex-row items-center justify-center space-x-1 '>
-            {icon && <div id='icon'>{icon}</div>}
+            {icon}
             <div id='temp' className='text-center'>
               <h4 className='text-4xl'>{title}</h4>
               {subtitle && <p className='text-xs text-gray-500'>{subtitle}</p>}
@@ -25,13 +25,13 @@ export const SimpleWidget = ({ title, subtitle, label, icon, href }: Props) => {
           </div>
         </div>
 
-        <div className='w-full place-items-end text-right border-t-2 border-gray-100 mt-2'>
-          {href && (
+        {href && (
+          <div className='w-full place-items-end text-right border-t-2 border-gray-100 mt-2'>
             <Link href={href} className='text-indigo-600 text-xs font-medium'>
-              Más
+              More
             </Link>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
