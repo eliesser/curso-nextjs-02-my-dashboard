@@ -9,19 +9,17 @@ interface PokemonsState {
 const getInitialState = () => {
   let favoritesPokemons;
 
-  if (typeof window !== 'undefined')
-    favoritesPokemons = JSON.parse(
-      localStorage.getItem('favoritesPokemons') ?? '{}'
-    );
+  if (typeof localStorage === 'undefined') return {};
+
+  favoritesPokemons = JSON.parse(
+    localStorage.getItem('favoritesPokemons') ?? '{}'
+  );
 
   return favoritesPokemons;
 };
 
 const initialState: PokemonsState = {
   ...getInitialState(),
-  /* '1': { id: '1', name: 'bulbasaur' },
-  '2': { id: '2', name: 'ivysaur' },
-  '3': { id: '3', name: 'venusaur' }, */
 };
 
 const pokemonsSlice = createSlice({
@@ -38,8 +36,6 @@ const pokemonsSlice = createSlice({
       } else {
         state[id] = pokemon;
       }
-
-      localStorage.setItem('favoritesPokemons', JSON.stringify(state));
     },
   },
 });
