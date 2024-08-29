@@ -5,5 +5,5 @@ const selectPokemonsState = (state: RootState) => state.pokemons;
 
 export const selectPokemonsArray = createSelector(
   [selectPokemonsState],
-  (pokemonsState) => Object.values(pokemonsState)
+  (pokemonsState) => Object.values(pokemonsState.favorites)
 );
